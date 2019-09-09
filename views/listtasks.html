@@ -1,0 +1,74 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+   
+
+
+    <h3>The list of tasks are:
+        <table>
+            <tr>
+                <td>Task ID</td>
+                <td>Name</td>
+                <td>Assign To</td>
+                <td>Due Date</td>
+                <td>Task Status</td>        
+                <td>Description</td>
+            </tr>
+            <% for ( var i = 0; i < tasks.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= tasks[i]._id%>
+                    </td>
+                    <td>
+                        <%= tasks[i].name %>
+                    </td>
+                    <td>
+                        <%= tasks[i].assignTo %>
+                    </td>
+                  
+                    <td>
+                        <%= tasks[i].dueDate %>
+                    </td>
+                  
+                    <td>
+                        <%= tasks[i].taskStatus %>
+                    </td>
+                    <td>
+                        <%= tasks[i].taskDescription %>
+                    </td>
+                </tr>
+
+                <% } %>
+        </table>
+    </h3>
+    <h3>Update</h3><br>
+    <!--form to update task new status-->
+    <form action="/updateStatus" method="POST">
+        Task ID:<input method="POST" type="text" name="taskId" > 
+        taskStatus: <select method="POST" name="taskStatus1">
+            <option value="InProgress">InProgress</option>
+            <option value="Complete">Complete</option>
+        </select></br>
+        <button>Update</button>
+    </form>
+    </br>
+
+    <h3>Delete With ID</h3><br>
+    <!--form to delete task by id-->
+    <form action="/deleteWithId" method="POST">
+        Task ID:<input method="POST" type="text" name="taskId2">
+        <button>Delete</button>
+    </form>
+    <br>
+    <a href="/">Home</a><br>
+    <a href="/newtask">Add New Task</a><br>
+    <a href="/deleteCompletedtask">Delete Completed Task</a><br>
+    <a href="/newdeveloper">Add developer</a></br>
+    <a href="/listdevelopers">List All Developers</a></br>
+</body>
+
+</html>

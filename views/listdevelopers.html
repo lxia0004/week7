@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h3>The list of developers are:
+        <table>
+            <tr>
+                <td>Id</td>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Level</td>
+                <td>Address</td>        
+            </tr>
+            <% for ( var i = 0; i < developers.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= developers[i]._id%>
+                    </td>
+                    <td>
+                        <%= developers[i].name.firstName %>
+                    </td>
+                    <td>
+                        <%= developers[i].name.lastName %>
+                    </td>
+                  
+                    <td>
+                        <%= developers[i].level %>
+                    </td>
+                  
+                    <td>
+                        <%= developers[i].address %>
+                    </td>
+    
+                </tr>
+
+                <% } %>
+        </table>
+    </h3>
+<br>
+    <a href="/">Home</a><br>
+    <a href="/newtask">Add New Task</a><br>
+    <a href="/newdeveloper">Add developer</a></br>
+    <a href="/listtasks">List All Tasks</a></br>
+</body>
+
+</html>
